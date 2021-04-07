@@ -30,6 +30,22 @@ function getSymbol (){
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+// prompts
+
+function pwLength (length) {
+  var length = prompt('Passowrd Length (it must be from 8-128 characters long): ');
+  if (length > 128) {
+    alert ('Too High')
+    pwLength();
+  } else if (length < 8) {
+    alert('Too low');
+    pwLength();
+  } else {
+    var passowdLength = length;
+  }
+};
+
+pwLength();
 // Write password to the #password input
 function writePassword() {                // function to write out the generated password
   var password = generatePassword();
