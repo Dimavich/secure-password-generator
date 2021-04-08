@@ -30,9 +30,9 @@ function getSymbol (){
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-// prompts
-
-function pwLength (length) {
+// PORMPTS
+// password length prompt
+function pwLength () {
   var length = prompt('Passowrd Length (it must be from 8-128 characters long): ');
   if (length > 128) {
     alert ('Too High')
@@ -45,7 +45,63 @@ function pwLength (length) {
   }
 };
 
+//Lower Case Prompt
+function lowerCase () {
+  var lowerCaseP = prompt('Do you want lower case letter in the password (Y/N) ');
+  if (lowerCaseP === 'N') {
+    alert ('lower case letter will not be generated ')
+  } else if (lowerCaseP === 'Y') {
+    alert ('lower case letter will be generated ') // replace this later
+  } else {
+    alert ('Please answer with a Y or a N')
+    lowerCase();
+  }
+};
+
+//Upper case prompt
+function upperCase () {
+  var upperCaseP = prompt('Do you want upper case letter in the password (Y/N) ');
+  if (upperCaseP === 'N') {
+    alert ('upper case letter will not be generated ')
+  } else if (upperCaseP === 'Y') {
+    alert ('upper case letter will be generated ') // replace this later
+  } else {
+    alert ('Please answer with a Y or a N')
+    upperCase();
+  }
+};
+
+//number prompt
+function numberCase () {
+  var numberCaseP = prompt('Do you want lower case letter in the password (Y/N) ');
+  if (numberCaseP === 'N') {
+    alert ('numbers will not be generated ')
+  } else if (numberCaseP === 'Y') {
+    alert ('numbers will be generated ') // replace this later
+  } else {
+    alert ('Please answer with a Y or a N')
+    numberCase();
+  }
+};
+
+//symbol prompt
+function symbolCase () {
+  var symbolCaseP = prompt('Do you want symbols in the password (Y/N) ');
+  if (symbolCaseP === 'N') {
+    alert ('symbols will not be generated ')
+  } else if (symbolCaseP === 'Y') {
+    alert ('symbols will be generated ') // replace this later
+  } else {
+    alert ('Please answer with a Y or a N')
+    symbolCase();
+  }
+};
+
 pwLength();
+lowerCase();
+upperCase();
+symbolCase();
+numberCase();
 // Write password to the #password input
 function writePassword() {                // function to write out the generated password
   var password = generatePassword();
