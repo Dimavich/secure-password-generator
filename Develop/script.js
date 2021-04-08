@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate"); // selects the generate b
 
 //Password function 
 var generatorFunction = {
-  lower: getLower,
+  lower: getLower, 
   upper: getUpper,
   number: getNumber,
   symbol: getSymbol
@@ -30,6 +30,7 @@ function getSymbol (){
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+
 // PORMPTS
 // password length prompt
 function pwLength () {
@@ -49,9 +50,9 @@ function pwLength () {
 function lowerCase () {
   var lowerCaseP = prompt('Do you want lower case letter in the password (Y/N) ');
   if (lowerCaseP === 'N') {
-    alert ('lower case letter will not be generated ')
+    lowerCaseP= false;
   } else if (lowerCaseP === 'Y') {
-    alert ('lower case letter will be generated ') // replace this later
+    lowerCaseP= true;
   } else {
     alert ('Please answer with a Y or a N')
     lowerCase();
@@ -62,9 +63,9 @@ function lowerCase () {
 function upperCase () {
   var upperCaseP = prompt('Do you want upper case letter in the password (Y/N) ');
   if (upperCaseP === 'N') {
-    alert ('upper case letter will not be generated ')
+    upperCaseP = false;
   } else if (upperCaseP === 'Y') {
-    alert ('upper case letter will be generated ') // replace this later
+    upperCaseP= true;
   } else {
     alert ('Please answer with a Y or a N')
     upperCase();
@@ -75,9 +76,9 @@ function upperCase () {
 function numberCase () {
   var numberCaseP = prompt('Do you want lower case letter in the password (Y/N) ');
   if (numberCaseP === 'N') {
-    alert ('numbers will not be generated ')
+    numberCaseP = false;
   } else if (numberCaseP === 'Y') {
-    alert ('numbers will be generated ') // replace this later
+    numberCaseP = true;
   } else {
     alert ('Please answer with a Y or a N')
     numberCase();
@@ -88,9 +89,9 @@ function numberCase () {
 function symbolCase () {
   var symbolCaseP = prompt('Do you want symbols in the password (Y/N) ');
   if (symbolCaseP === 'N') {
-    alert ('symbols will not be generated ')
+    symbolCaseP = false;
   } else if (symbolCaseP === 'Y') {
-    alert ('symbols will be generated ') // replace this later
+    symbolCaseP = true;
   } else {
     alert ('Please answer with a Y or a N')
     symbolCase();
@@ -102,6 +103,12 @@ lowerCase();
 upperCase();
 symbolCase();
 numberCase();
+
+//SELECTOR FUNCTION
+
+
+
+
 // Write password to the #password input
 function writePassword() {                // function to write out the generated password
   var password = generatePassword();
