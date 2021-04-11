@@ -4,6 +4,11 @@ var lowerChar = 'abcdefghijklmnopqrstuvwxyz';
 var upperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var num = '123456789';
 var sym = '!@#$%^&*()_-+=,<>.?/';
+var pwdValues = '';
+var lower = '';
+var upper = '';
+var number = '';
+var symbol = '';
 
 
 
@@ -29,7 +34,7 @@ generateBtn.addEventListener('click', function(){
             lower = true;
         } else {
             lower = false;
-        }
+        };
     };
     //Upper
     function setUpper(){
@@ -59,6 +64,21 @@ generateBtn.addEventListener('click', function(){
         }
     };
 
+    function conditionGenerator (){
+        if (lower === true) {
+            pwdValues += lowerChar;
+        } if (upper === true) {
+            pwdValues += upperChar;
+        } if (number === true) {
+            pwdValues += num;
+        } if (symbol === true) {
+            pwdValues += sym;
+        } else {
+            alert('Nothing was selected')
+        }
+        return pwdValues;
+    };
+
         //Password generator
     function generatePassword (length,pwdValues) {
         var pwd= "";
@@ -68,7 +88,7 @@ generateBtn.addEventListener('click', function(){
         return pwd;
     };
 
-    console.log(generatePassword(12,lowerChar));
+    
     
 
 
@@ -78,7 +98,8 @@ generateBtn.addEventListener('click', function(){
     setUpper();
     setNumber();
     setSymbol();
-    generatePassword();
+    conditionGenerator();
+    generatePassword(length,pwdValues);
 });
 
 
