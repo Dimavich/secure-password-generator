@@ -5,6 +5,7 @@ var upperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var num = '123456789';
 var sym = '!@#$%^&*()_-+=,<>.?/';
 var pwdValues = '';
+var password = ''
 var lower = '';
 var upper = '';
 var number = '';
@@ -81,13 +82,16 @@ generateBtn.addEventListener('click', function(){
 
         //Password generator
     function generatePassword (length,pwdValues) {
-        var pwd= "";
         for (var i=0; i < length; i ++){
-            pwd += pwdValues.charAt(Math.floor(Math.random() * pwdValues.length))
+            password += pwdValues.charAt(Math.floor(Math.random() * pwdValues.length))
         }
-        return pwd;
+        return password;
     };
 
+    function writePassword() {
+        var passwordText = document.querySelector("#password");
+        passwordText.value = password;
+    }
     
     
 
@@ -100,6 +104,7 @@ generateBtn.addEventListener('click', function(){
     setSymbol();
     conditionGenerator();
     generatePassword(length,pwdValues);
+    writePassword();
 });
 
 
@@ -110,9 +115,9 @@ generateBtn.addEventListener('click', function(){
 // Write password to the #password input
 function writePassword() {                // function to write out the generated password
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  
 
-  passwordText.value = password;
+  
 
 }
 
