@@ -1,4 +1,4 @@
-// Assignment Code
+// Declaring variables
 var generateBtn = document.querySelector("#generate"); // selects the generate button
 var lowerChar = 'abcdefghijklmnopqrstuvwxyz';
 var upperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -28,7 +28,7 @@ generateBtn.addEventListener('click', function(){
             return length;
         }
     };
-    //Lower
+    //Lower prompt
     function setLower(){
         var lowerP = confirm('Lowercase in password: ');
         if(lowerP){
@@ -37,7 +37,7 @@ generateBtn.addEventListener('click', function(){
             lower = false;
         };
     };
-    //Upper
+    //Upper prompt
     function setUpper(){
         var upperP = confirm('Uppercase in password: ');
         if(upperP){
@@ -46,7 +46,7 @@ generateBtn.addEventListener('click', function(){
             upper = false;
         }
     };
-
+    //number prompt
     function setNumber(){
         var numberP = confirm('Numbers in password: ');
         if(numberP){
@@ -55,7 +55,7 @@ generateBtn.addEventListener('click', function(){
             number = false;
         }
     };
-
+    // symbol prompt
     function setSymbol(){
         var symbolP = confirm('Symbols in password: ');
         if(symbolP){
@@ -64,7 +64,7 @@ generateBtn.addEventListener('click', function(){
             symbol = false;
         }
     };
-
+    // adds the password conditions
     function conditionGenerator (){
         if (lower === true) {
             pwdValues += lowerChar;
@@ -74,12 +74,13 @@ generateBtn.addEventListener('click', function(){
             pwdValues += num;
         } if (symbol === true) {
             pwdValues += sym;
+        } if (lower === false && upper === false && number === false && symbol === false){
+            alert('Nothing was selected');
         } else {
-            alert('Nothing was selected')
         }
         return pwdValues;
     };
-
+    
         //Password generator
     function generatePassword (length,pwdValues) {
         for (var i=0; i < length; i ++){
@@ -87,7 +88,7 @@ generateBtn.addEventListener('click', function(){
         }
         return password;
     };
-
+    // password writing function
     function writePassword() {
         var passwordText = document.querySelector("#password");
         passwordText.value = password;
@@ -106,39 +107,3 @@ generateBtn.addEventListener('click', function(){
     generatePassword(length,pwdValues);
     writePassword();
 });
-
-
-
-
-
-
-// Write password to the #password input
-function writePassword() {                // function to write out the generated password
-  var password = generatePassword();
-  
-
-  
-
-}
-
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword); // activates when you click on the generate password button
-
-
-
-
-
-
-
-
-
-// TO GENERATE PASSWORD I NEED:
-// #a function that uses math to generate a random number that is assigned to a lowecase latter of the alphabet
-// #a function that uses math to generate random uppercase letters 
-// #a function to generate random numbers from 1-9
-// a# function to generate a number of special charecters 
-// a function that sets the password length to what the user input on the prompt 8-128
-// a way to select what i want and dont want in my generated passwords
-// validate that at least one of the generating functions is selected
-// a function to generate the password and that it matches my selected criteria
-// display the password in the textfield  
