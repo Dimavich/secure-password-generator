@@ -1,14 +1,11 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); // selects the generate button
+var lowerChar = 'abcdefghijklmnopqrstuvwxyz';
+var upperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var num = '123456789';
+var sym = '!@#$%^&*()_-+=,<>.?/';
 
 
-//Password function 
-var generatorFunction = {
-  lower: getLower,
-  upper: getUpper,
-  number: getNumber,
-  symbol: getSymbol
-};
 
 generateBtn.addEventListener('click', function(){
     //Length prompt
@@ -62,6 +59,18 @@ generateBtn.addEventListener('click', function(){
         }
     };
 
+        //Password generator
+    function generatePassword (length,pwdValues) {
+        var pwd= "";
+        for (var i=0; i < length; i ++){
+            pwd += pwdValues.charAt(Math.floor(Math.random() * pwdValues.length))
+        }
+        return pwd;
+    };
+
+    console.log(generatePassword(12,lowerChar));
+    
+
 
     
     setLength();
@@ -69,26 +78,13 @@ generateBtn.addEventListener('click', function(){
     setUpper();
     setNumber();
     setSymbol();
+    generatePassword();
 });
 
 
-// generating functions
-function getLower(){
-  return String.fromCharCode (Math.floor(Math.random() * 26) + 97);
-}
 
-function getUpper(){
-  return String.fromCharCode (Math.floor(Math.random() * 26) + 65);
-}
 
-function getNumber(){
-  return String.fromCharCode (Math.floor(Math.random() * 10) + 48);
-}
 
-function getSymbol (){
-  var symbols = '!@#$%^&*()-_=+,./<>?;'
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
 
 // Write password to the #password input
 function writePassword() {                // function to write out the generated password
