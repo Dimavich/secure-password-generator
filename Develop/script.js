@@ -65,7 +65,7 @@ generateBtn.addEventListener('click', function(){
         }
     };
     // adds the password conditions
-    function conditionGenerator (){
+    function conditionChecker (){
         if (lower === true) {
             pwdValues += lowerChar;
         } if (upper === true) {
@@ -93,17 +93,13 @@ generateBtn.addEventListener('click', function(){
         var passwordText = document.querySelector("#password");
         passwordText.value = password;
     }
-    
-    
 
-
-    
     setLength();
     setLower();
     setUpper();
     setNumber();
     setSymbol();
-    conditionGenerator();
+    conditionChecker();
     generatePassword(length,pwdValues);
     writePassword();
 });
