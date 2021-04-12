@@ -2,11 +2,6 @@
 
 ## Discription 
 
-     This is a secure random password generator.
-     You click the generate Password button and it will ask you for some perameters such as length, lower-case, upper-case, numbers, and symbols.
-     You can choose whatever perameters you want or don't want and it will generate your custom password.
-     **Note:** You will have to refresh page before generating a new password unless you want the new password to be concatenated to the new one.
-
 
 
 ## User Perameters
@@ -24,8 +19,8 @@
 
 ### Selection 
 
-    You must choose at least one of the perameters that doesn't include length or no password will be generated
-    ![](Assets/nothing.png)
+You must choose at least one of the perameters that doesn't include length or no password will be generated
+![](Assets/nothing.png)
 
 ## finished product
 
