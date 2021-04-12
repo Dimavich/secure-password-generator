@@ -1,6 +1,6 @@
 # secure-password-generator
 
-## Discription 
+## Description 
 
 This is a secure random password generator.
 You click the generate Password button and it will ask you for some perameters such as length, lower-case, upper-case, numbers, and symbols.
